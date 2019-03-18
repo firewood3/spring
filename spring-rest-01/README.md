@@ -375,7 +375,7 @@ public class SwaggerConfig {
 ```
 
 ***swagger 적용***
-![swagger 적용](/images/swagger_적용.png)
+![swagger 적용](../images/swagger_적용.png)
 
 ***
 참고자료  
