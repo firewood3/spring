@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="CONSOLE_LOG_PATTERN" value="%d [%15.15t{14}] %-5p %-40.40logger{39} : %m%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.apress" level="DEBUG"/>
+    <logger name="org.springframework.web" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<configuration scan="true" scanPeriod="30 seconds">-->
+
+    <!--<property name="LOG_HOME" value="logs" />-->
+    <!--<property name="LOG_PATTERN" value="%logger{36} %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>-->
+    <!--<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>${LOG_HOME}/test-web-app.log</file>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash; daily rollover &ndash;&gt;-->
+            <!--<fileNamePattern>${LOG_HOME}/test-web-app.log.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+            <!--&lt;!&ndash; keep 30 days' worth of history &ndash;&gt;-->
+            <!--<maxHistory>30</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<pattern>${LOG_PATTERN}</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+        <!--<encoder>-->
+            <!--<pattern>-->
+                <!--${LOG_PATTERN}-->
+            <!--</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+    <!--<logger name="org.springframework" level="DEBUG" >-->
+        <!--<appender-ref ref="STDOUT" />-->
+        <!--<appender-ref ref="FILE" />-->
+    <!--</logger>-->
+
+    <!--&lt;!&ndash; turn OFF all logging (children can override) &ndash;&gt;-->
+    <!--<root level="INFO">-->
+        <!--<appender-ref ref="STDOUT" />-->
+        <!--<appender-ref ref="FILE" />-->
+    <!--</root>-->
+<!--</configuration>-->
