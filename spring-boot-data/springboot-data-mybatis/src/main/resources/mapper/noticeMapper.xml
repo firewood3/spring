@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.noticeMapper">
+
+    <resultMap id="userResultMap" type="com.firewood.springbootdatamybatis.notice.Notice">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+    </resultMap>
+
+
+    <select id="findAllNotice" resultType="hashMap">
+    <![CDATA[
+		SELECT id, title, content
+		FROM TBL_NOTICE
+	]]>
+    </select>
+
+    <insert id="addNotice" >
+    <![CDATA[
+        insert into TBL_NOTICE(id ,title, content)
+        values(#{id},#{title}, #{content})
+     ]]>
+    </insert>
+
+    <select id="findNoticeById" parameterType="map" resultMap="userResultMap">
+    <![CDATA[
+      SELECT
+            id,
+            title,
+            content
+      FROM TBL_NOTICE
+      WHERE id =#{id}
+      ]]>
+    </select>
+</mapper>
